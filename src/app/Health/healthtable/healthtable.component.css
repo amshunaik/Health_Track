@@ -1,0 +1,18 @@
+
+  .mat-mdc-table {
+    min-width: 100%;
+    border: 0;
+    border-spacing: 0;
+    table-layout: auto;
+    white-space: normal;
+    background-color: #ecfeff;
+    /* Use a CSS variable or specific color value */
+  }
+
+  .mat-mdc-paginator{
+    background: rgb(108, 204, 216);
+    box-shadow: 1px 2px 5px black;
+  }
+  .mat-display-large, .mat-typography .mat-display-large, .mat-typography h1 {
+    font-size: 20px;
+  }

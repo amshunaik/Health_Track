@@ -1,0 +1,30 @@
+
+<main class="z-0">
+  
+  <form class="flex flex-col gap-4 items-center text-center relative shadow-2xl border-2 border-solid  w-6/12 ml-96 p-4 z-2 mt-52 rounded-xl">
+    <p class="text-4xl font-medium text-red text-center">Add your workout plan</p>
+    <mat-form-field class="w-8/12 bg- ">
+      <mat-label>User Name*</mat-label>
+      <input matInput [formControl]="username1">
+    </mat-form-field>
+  <div class="flex gap-20">
+    <mat-form-field >
+      <mat-label>Workout Type*</mat-label>
+      <mat-select [(value)]="workouttype">
+        
+        <mat-option *ngFor="let work of Activities" [value]="work">{{work}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field >
+      <mat-label>Workout Minutes*</mat-label>
+      <input matInput [formControl]="workouttime" >
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-button  (click)="submitData($event)" class="text-white bg-black font-medium px-4 py-2 rounded-lg">Add Workout </button>
+    <a [routerLink]="['/table']" class="ml-60 text-white bg-black font-medium px-4 py-2 rounded-lg">Workout List</a>
+  </div>
+  </form>
+
+  </main>

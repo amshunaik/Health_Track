@@ -1,0 +1,60 @@
+<main class="px-48 mt-32">
+    <div>
+        <p class="text-4xl font-medium text-red text-center">Workout table</p>
+        <form class="flex gap-96">
+        <input matInput type="text" placeholder="Search"  [formControl]="searchbyusername"  (change)="filterResults(filter.value)" #filter class="pl-2 text-xl bg-gray-200
+        border-b-2 border-black   bg-grey h-14 w-96">
+        
+          
+          <mat-form-field class="w-96">
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="selected" (selectionChange)="filterItemsByCategory()">
+              <mat-option [value]="null">All</mat-option>
+              <mat-option *ngFor="let work of Activities" [value]="work">{{work}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+  
+
+        <table mat-table [dataSource]="dataSource" class=" bg-red-500 shadow-[0px_1px_3px_2px_rgba(0,0,0,0.3)] ">
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+           <ng-container matColumnDef="workouts">
+            <th mat-header-cell *matHeaderCellDef> Workout types </th>
+            <td mat-cell *matCellDef="let element"> {{getworktypes(element.workouts)}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="numberOfWorkouts">
+            <th mat-header-cell *matHeaderCellDef> Number of workouts</th>
+            <td mat-cell *matCellDef="let element"> {{getworknumber(element.workouts)}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="totalWorkoutTime">
+            <th mat-header-cell *matHeaderCellDef> Total workout time </th>
+            <td mat-cell *matCellDef="let element"> {{getTotalTime(element.workouts)}} </td>
+          </ng-container>
+        
+       
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements" class="bg-cyan-500	shadow-2xl">
+  </mat-paginator>
+   
+    </div>
+    <div class="mt-10 mb-4">
+      <a [routerLink]="['/graph']" class=" text-white bg-black font-medium px-4 py-2 rounded-lg mb-4">Visualize Data</a>
+
+    </div>
+
+    
+
+</main>
+
+

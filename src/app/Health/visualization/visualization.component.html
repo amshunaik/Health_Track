@@ -1,0 +1,41 @@
+<main>
+    <div class="mt-32" >
+        <div  style="margin-bottom:30px ;margin-left:80px">
+           <p class="text-4xl font-medium  items-center text-center text-black-600"> Visualizing Progress</p>
+        </div>
+       
+     
+            <div class="flex flex-col gap-2 mx-40 bg-cyan-50 p-2 border-solid border-2 border-gray-200 shadow-2xl">
+        
+    
+                <div class=" ml-20  flex flex-row absolute justify-content-center text-center pt-2">
+                    <p-listbox 
+                        [options]="Data" 
+                        [(ngModel)]="Selectedperson" 
+                        optionLabel="name" 
+                        class="  mt-28 w-60 h-38 overflow-y-auto overflow-x-auto border-solid border-2 p-2 border-black-500 relative"
+                        (ngModelChange)="onPersonChange()">
+                            <ng-template let-person pTemplate="item" class="flex gap-2 hover:bg-gray-900 ">
+                                <div class="w-56 text-center focus:text-black hover:bg-gray-300 ">
+                                   
+                                    <p class="text-xl text-orange-600 hover:text-purple-900 focus-within:text-yellow-900" >{{ person.name }}</p>
+                                    <hr >
+                                </div>
+                            </ng-template>
+                    </p-listbox>
+                
+                
+                </div>
+                <div >
+
+                    <p 
+                     class="text-2xl text-black-800" style="margin-left: 600px">{{ getSelectedPersonplot() }}</p>  
+                    <p-chart class="inline-block w-3/5 ml-96 h-3/5 relative " type="bar" [data]="basicData" [options]="basicOptions" ></p-chart>
+    
+                </div>
+                
+                
+            </div>
+    </div>
+</main>
+
