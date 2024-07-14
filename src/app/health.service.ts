@@ -25,7 +25,7 @@ export class HealthService {
  // Adding data in localStorage
   constructor() {
     let r=localStorage.getItem('healthdata');
-    if(r){
+    if(!r){
       localStorage.setItem('healthdata',JSON.stringify([
         {
           id: 1,
