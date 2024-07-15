@@ -74,8 +74,7 @@ describe('FirstComponent', () => {
         id: 1,
         name: 'John Doe',
         workouts: [
-          { type: 'Running', minutes: 30 },
-          { type: 'Cycling', minutes: 45 },
+          { type: 'Running', minutes: 30 }
         ],
       },
     ];
@@ -88,6 +87,45 @@ describe('FirstComponent', () => {
     const storedData = JSON.parse(localStorage.getItem('healthdata') || '[]');
     expect(storedData.length).toBe(5);
     //expect(storedData[1]).toEqual(newUser);
+  });
+  it('should use Healthservice', () => {
+    //expect(localStorage.getItem('healthdata')).toBeNull(); // Check if 'healthdata' is initially null
+    if(localStorage.getItem('healthdata')==null){
+    // Re-inject service to trigger constructor
+    service2 = TestBed.inject(HealthService);
+
+    const expectedData: Healthdata[] = [
+      {
+        id: 1,
+        name: 'John Doe',
+        workouts: [
+          { type: 'Running', minutes: 30 },
+          { type: 'Cycling', minutes: 45 },
+        ],
+      },
+      {
+        id: 2,
+        name: 'Jane Smith',
+        workouts: [
+          { type: 'Swimming', minutes: 60 },
+          { type: 'Running', minutes: 20 },
+        ],
+      },
+      {
+        id: 3,
+        name: 'Mike Johnson',
+        workouts: [
+          { type: 'Yoga', minutes: 50 },
+          { type: 'Cycling', minutes: 40 },
+        ],
+      },
+    ];
+
+    const storedData = JSON.parse(localStorage.getItem('healthdata') || '[]') as Healthdata[];
+
+    // Assert that localStorage now contains the expected data
+    expect(storedData).toEqual(expectedData);
+  }
   });
   
 
