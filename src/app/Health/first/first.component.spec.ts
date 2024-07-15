@@ -88,7 +88,7 @@ describe('FirstComponent', () => {
     expect(storedData.length).toBe(5);
     //expect(storedData[1]).toEqual(newUser);
   });
-  it('should use Healthservice', () => {
+  it('should use Healthservice, if the local storage is empty', () => {
     //expect(localStorage.getItem('healthdata')).toBeNull(); // Check if 'healthdata' is initially null
     if(localStorage.getItem('healthdata')==null){
     // Re-inject service to trigger constructor
