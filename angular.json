@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/demo",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -21,7 +21,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-            
+              {
+                "glob": "**/*",
+                "input": "public"
+                
+              },
               "src/favicon.ico",
               "src/assets",
               "src/_redirects"
@@ -88,8 +92,11 @@
             "assets": [
               "src/favicon.ico",
   "src/assets",
-  "src/_redirects"
-              
+  "src/_redirects",
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
