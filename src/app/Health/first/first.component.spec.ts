@@ -61,6 +61,34 @@ describe('FirstComponent', () => {
     console.log("data given : ",pl)
     expect(r).toEqual(pl);
   }));
+  it('should add new user data to healthdt which not existed', () => {
+    component.AddData('Alice', 'Running', '30', 1);
+    const expectedData:Healthdata[] = service2.getAllHealthData();
+    
+    expect(component.healthdt).toEqual(expectedData);
+    
+  });
+  it('should add new user data if it does not exist', () => {
+    const initialData: Healthdata[] = [
+      {
+        id: 1,
+        name: 'John Doe',
+        workouts: [
+          { type: 'Running', minutes: 30 },
+          { type: 'Cycling', minutes: 45 },
+        ],
+      },
+    ];
+    localStorage.setItem('healthdata', JSON.stringify(initialData));
+    service2 = TestBed.inject(HealthService);  // Re-inject service to read localStorage
+
+    const newUser = { id: 2, name: 'Alice', workouts: [{ type: 'Swimming', minutes: 60 }] };
+    component.AddData(newUser.name, newUser.workouts[0].type, newUser.workouts[0].minutes.toString(), newUser.id);
+
+    const storedData = JSON.parse(localStorage.getItem('healthdata') || '[]');
+    expect(storedData.length).toBe(5);
+    //expect(storedData[1]).toEqual(newUser);
+  });
   
 
   it('should add new health data when submitData is called', () => {

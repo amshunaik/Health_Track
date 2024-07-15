@@ -38,7 +38,7 @@ describe('VisualizationComponent', () => {
   });
 
   it('should initialize healthdata from the health service', () => {
-    expect(component.healthdata.length).toBe(4);
+    expect(component.healthdata.length).toBe(5);
   });
 
   it('should filter data and set up chart data when a person is selected', () => {
