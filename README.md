@@ -40,3 +40,18 @@ Deployment link : https://amshunaik.github.io/Health_Track/
   
             * Filtered out the required data for graph for that particular person whole progress the user want to vsualize
   
+## Coverage Summary 
+
+Statements   : 100% ( 122/122 )
+Branches     : 100% ( 19/19 )
+Functions    : 100% ( 23/23 )
+Lines        : 100% ( 115/115 )
+
+================================================================================
+
+| File                    | Statements | Branches | Functions | Lines |
+|-------------------------|------------|----------|-----------|-------|
+| src/app/app.component.ts | 100%       | 100%     | 100%      | 100%  |
+| src/app/health.service.ts | 100%       | 100%     | 100%      | 100%  |
+
+For a detailed report, you can open the [coverage report](./coverage/index.html) in your browser.

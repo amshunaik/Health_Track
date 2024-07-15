@@ -4,7 +4,7 @@ import { Healthdata } from './healthdata';
   providedIn: 'root'
 })
 export class HealthService {
-  
+ 
 
   id1=4;
   // Getting the workout list from localstorage

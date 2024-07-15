@@ -74,40 +74,33 @@ AddData(name: string, workout_type: string, workout_time: string,id1: number) {
       //console.log("final ans : ",exists);
     }
     
+    
     localStorage.setItem("healthdata",JSON.stringify(this.healthdt))
+    let r=this.healthservice.getAllHealthData();
+    console.log(r)
+    return this.healthdt;
     //console.log("Data stored : ",this.healthdt)
     //console.log("Final data : - " ,localStorage.getItem('healthdata'))
     
   }
-  // Function to add the workout plan or a person/user into the HealthService list , g
-  submitData(event:Event){
-    event.preventDefault();
-    if(!this.username1.value||!this.workouttime.value||!this.workouttype){
-      alert("Please fill all details ");
+  // Function to add the workout plan of a person/user into the HealthService list 
+  submitData(): Healthdata[] | undefined {
+    if (!this.username1.value || !this.workouttime.value || !this.workouttype) {
+      alert('Please fill all details');
       return;
-    }    
-    // console.log('Username:', this.username1.value);
-    // console.log('Workout Minutes:', this.workouttime.value);
-    // console.log('Workout Type:', this.workouttype); 
+    }
 
-    // Sending the input values from user to add into the workout list
-    let ind=this.healthdt.length;
-    //console.log("index idea : ",ind)
-    
-      let id1=ind;
-      
+    let ind = this.healthdt.length;
+    let id1 = ind;
 
-      this.AddData(
-        this.username1.value ?? '',
-        this.workouttype ,
-        this.workouttime.value ?? '',id1
-      )
-    
+    this.AddData(this.username1.value, this.workouttype, this.workouttime.value, id1);
+
     this.username1.setValue('');
     this.workouttime.setValue('');
-    this.workouttype='';
-  }
+    this.workouttype = '';
 
+    return this.healthdt;
+  }
 }
 
   
