@@ -49,7 +49,7 @@ AddData(name: string, workout_type: string, workout_time: string,id1: number) {
     };
     // Checking if the person already present in the workout list
     const exists=this.healthdt.find(d=>d.name.toLowerCase()===user1.name.toLowerCase());
-    console.log("uhgfcv : ",exists);
+    //console.log("exist  : ",exists);
     // if not exists then add the newly created data
     if(!exists){
       this.healthdt.push(user1);
@@ -71,12 +71,12 @@ AddData(name: string, workout_type: string, workout_time: string,id1: number) {
           }
       
       exists.workouts.push(user1.workouts[0]);
-      console.log("final ans : ",exists);
+      //console.log("final ans : ",exists);
     }
     
     localStorage.setItem("healthdata",JSON.stringify(this.healthdt))
-    console.log("Data stored : ",this.healthdt)
-    console.log("Final data : - " ,localStorage.getItem('healthdata'))
+    //console.log("Data stored : ",this.healthdt)
+    //console.log("Final data : - " ,localStorage.getItem('healthdata'))
     
   }
   // Function to add the workout plan or a person/user into the HealthService list , g
@@ -92,7 +92,7 @@ AddData(name: string, workout_type: string, workout_time: string,id1: number) {
 
     // Sending the input values from user to add into the workout list
     let ind=this.healthdt.length;
-    console.log("index idea : ",ind)
+    //console.log("index idea : ",ind)
     
       let id1=ind;
       

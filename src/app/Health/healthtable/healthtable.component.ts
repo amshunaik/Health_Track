@@ -46,7 +46,7 @@ export class HealthtableComponent implements OnInit, AfterViewInit {
  
   // function to filter out the workout list table on the basis of the workout type/ searched by the user.
   filterItemsByCategory() {
-    console.log("Seleted category : ",this.selected)
+    //console.log("Seleted category : ",this.selected)
     // if none of the type selected then show complete list
     if (this.selected === null) {
       this.filteredLocationList = this.healthdata; // Reset filter if no category selected
@@ -70,7 +70,7 @@ export class HealthtableComponent implements OnInit, AfterViewInit {
         //console.log('searchbyusername:', value);
         if (r==''||r==null) {
           this.filteredLocationList = this.healthdata;
-          console.log("one")
+          //console.log("one")
           setTimeout(()=>{
             
           this.filteredLocationList = this.healthdata;
@@ -132,7 +132,7 @@ export class HealthtableComponent implements OnInit, AfterViewInit {
   constructor(){
     this.healthdata=this.healthservice.getAllHealthData();
     this.filteredLocationList = this.healthdata;
-    console.log("Kok :",this.dataSource);
+    //console.log("Data set :",this.dataSource);
     this.filterResults('');
  
   }

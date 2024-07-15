@@ -44,7 +44,7 @@ export class VisualizationComponent  {
       );
     } 
 
-    console.log(this.ActualData);
+    //console.log(this.ActualData);
 
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
@@ -52,17 +52,20 @@ export class VisualizationComponent  {
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
     
     // actual dataset to be used , storing labels, datasets( time taken for performing differnt types of workout)
-
+  
     let label1=this.ActualData[0].workouts;
-    console.log("kk : ",label1)
+    
+    // here p store the labels , the x axis attributes , the different workout types performed by the person
+    // mins -> store the time take to perform different workout types
     let p=[];
     let mins=[];
+    
     for (let x=0;x<label1.length;x++){
       p.push(label1[x].type);
       mins.push(label1[x].minutes);
 
     }
-    // controlling the graph layouyt and  setting up data for a chart (used chart.js library)
+    // controlling the graph layout and  setting up data for a chart (used chart.js library)
     this.basicData = {
         labels: p,
         datasets: [
@@ -119,10 +122,8 @@ export class VisualizationComponent  {
 
 constructor(){
    
-   //let x=localStorage.getItem('healthdata');
-   //console.log("king : ",x)
    this.healthdata=this.healthservice.getAllHealthData();
-   console.log("data : ",this.healthdata)
+   //console.log("data : ",this.healthdata)
    this.Data=this.healthdata
 }
   }

@@ -14,7 +14,7 @@ export class HealthService {
     if (storedData) {
       try {
         parsedData = JSON.parse(storedData);
-        console.log("Data from localStorage:", parsedData);
+        //console.log("Data from localStorage:", parsedData);
       } catch (e) {
         //console.error("Error parsing JSON:", e);
       }
