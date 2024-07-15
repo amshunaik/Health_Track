@@ -42,10 +42,10 @@ Deployment link : https://amshunaik.github.io/Health_Track/
   
 ## Coverage Summary 
 
-Statements   : 100% ( 122/122 )
-Branches     : 100% ( 19/19 )
-Functions    : 100% ( 23/23 )
-Lines        : 100% ( 115/115 )
+* Statements   : 100% ( 122/122 )
+* Branches     : 100% ( 19/19 )
+* Functions    : 100% ( 23/23 )
+* Lines        : 100% ( 115/115 )
 
 ================================================================================
 
