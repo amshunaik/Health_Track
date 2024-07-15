@@ -54,4 +54,4 @@ Deployment link : https://amshunaik.github.io/Health_Track/
 | src/app/app.component.ts | 100%       | 100%     | 100%      | 100%  |
 | src/app/health.service.ts | 100%       | 100%     | 100%      | 100%  |
 
-For a detailed report, you can open the [coverage report](./coverage/index.html) in your browser.
+For a detailed report, you can open the [coverage report](./coverage/demo/index.html) in your browser.
