@@ -51,30 +51,7 @@ export class HealthService {
             { type: 'Cycling', minutes: 40 }
           ]
         },
-        {
-          id: 1,
-          name: 'cushio Doe',
-          workouts: [
-            { type: 'Running', minutes: 30 },
-            { type: 'Cycling', minutes: 45 }
-          ]
-        },
-        {
-          id: 1,
-          name: 'rohan Doe',
-          workouts: [
-            { type: 'Running', minutes: 30 },
-            { type: 'Cycling', minutes: 45 }
-          ]
-        },
-        {
-          id: 1,
-          name: 'Jotimhn Doe',
-          workouts: [
-            { type: 'Running', minutes: 30 },
-            { type: 'Cycling', minutes: 45 }
-          ]
-        },
+       
       ]));
 
     }
